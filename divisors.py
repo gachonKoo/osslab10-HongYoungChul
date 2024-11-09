@@ -6,8 +6,9 @@ def find_divisors(n):
 
 if __name__ == "__main__":
     try:
-        # sys.stdin을 사용하여 모든 입력 읽기
-        num = int(sys.stdin.read().strip())
-        print(", ".join(map(str, find_divisors(num))))
+        # 여러 줄 입력을 받아 각 줄을 처리
+        for line in sys.stdin:
+            num = int(line.strip())
+            print(", ".join(map(str, find_divisors(num))))
     except ValueError:
         print("Please enter a valid integer.")
