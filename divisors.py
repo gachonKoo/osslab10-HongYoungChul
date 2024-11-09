@@ -1,12 +1,12 @@
+import sys
+
 def find_divisors(n):
     divisors = [i for i in range(1, n + 1) if n % i == 0]
     return divisors
 
 if __name__ == "__main__":
-    try:
-        # 표준 입력으로 숫자를 입력받기
-        num = int(input("Enter a number: "))
-        # 약수를 쉼표로 구분하여 출력
+    if len(sys.argv) > 1:
+        num = int(sys.argv[1])
         print(", ".join(map(str, find_divisors(num))))
-    except ValueError:
-        print("Please enter a valid integer.")
+    else:
+        print("Please provide a number as a command line argument.")
